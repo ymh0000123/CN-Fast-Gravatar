@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="utf-8">
+    <title>CN-Fast-Gravatar</title>
+    <link rel="stylesheet" href="https://dataechoui.pages.dev/DataEchoUI.css">
+    <link rel="shortcut icon" type="image/ico" href="./favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--<style>
+    body {
+      background: url('https://xiaofeishu-picture2.pages.dev/picture/2x-ly.webp');
+      /* 背景图片 */
+      background-size: cover;
+    }
+  </style>-->
+    <style>
+        body {
+            background-color: #c6d5ec;
+        }
+    </style>
+    <script src="https://dataechoui.pages.dev/DataEchoUI.js"></script>
+</head>
+
+<body>
+    <div class="DataEchoUI-navbar">
+        <div class="logo">CN-Fast-Gravatar</div>
+        <div class="DataEchoUI-navbar-links">
+            <a class="DataEchoUI-highlight-1" href="index.html">主页</a>
+            <a href="./install.html">安装</a>
+            <a href="https://ymh0000123.github.io/">网站</a>
+            <a href="https://xiaofeishu-boke.netlify.app/">博客</a>
+            <a href="https://ymh0000123.pages.dev/">关于</a>
+        </div>
+        <div class="filler"></div>
+    </div>
+    <div id="DataEchoUI-navbar-left-31">
+        <h1>CN-Fast-Gravatar</h1>
+        <p style="height: 55%;">增强中国大陆地区的访问Gravatar</p>
+        <a class="DataEchoUI-button-Primary" href="./install.html">立刻使用</a>
+    </div>
+    <div class="DataEchoUI-card">
+        <h2>欢迎来到DataEchoUI</h2>
+        <p id="ys">原神好句API正在加载...</p>
+        <p>
+            <a class="DataEchoUI-button-Primary" href="https://dataechoui.pages.dev/">Cloudflare Pages</a>
+            <a class="DataEchoUI-button-Primary" href="https://github.com/ymh0000123/CN-Fast-Gravatar">GitHub</a>
+        </p>
+    </div>
+    <script>
+        //原神好句api by没用的小废鼠
+        fetch('https://unpkg.com/genshin-good-words/Good-words.txt')
+            .then(response => response.text())
+            .then(data => {
+                const lines = data.split('\n');
+                const randomLine = lines[Math.floor(Math.random() * lines.length)];
+                document.getElementById('ys').innerText = randomLine;
+            })
+            .catch(error => {
+                console.error('Error fetching ys:', error);
+            });
+
+    </script>
+
+</html>
